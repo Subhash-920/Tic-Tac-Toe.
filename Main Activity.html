@@ -1,0 +1,121 @@
+packagecom.example.ticttacapplication 
+
+import androidx.appcompat.app.AppCompatActivity 
+import android.os.Bundle 
+import android.view.View 
+import android.widget.Button 
+import android.widget.Toast 
+import kotlinx.android.synthetic.main.activity_main.* 
+
+class MainActivity: AppCompatActivity() 
+{ 
+    varflag = 0
+    varcount = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) 
+    { 
+        super.onCreate(savedInstanceState) 
+        setContentView(R.layout.activity_main) 
+    } 
+    
+    fun newGame()
+    { 
+        btn1.text="" 
+        btn2.text="" 
+        btn3.text="" 
+        btn4.text="" 
+        btn5.text="" 
+        btn6.text="" 
+        btn7.text="" 
+        btn8.text="" 
+        btn9.text="" 
+        flag=0; 
+        count=0; 
+    } 
+    
+    fun check(view: View) 
+    { 
+        valbtncurrent= view as Button if (btncurrent.text== "") 
+        { 
+            count++ if (flag == 0) 
+            { 
+                btncurrent.text= "x" flag = 1; 
+            } 
+            else 
+            { 
+                btncurrent.text= "o" flag = 0; 
+            }
+
+            valb1 = btn1.text.toString() 
+            valb2 = btn2.text.toString() 
+            valb3 = btn3.text.toString() 
+            valb4 = btn4.text.toString() 
+            valb5 = btn5.text.toString() 
+            valb6 = btn6.text.toString() 
+            valb7 = btn7.text.toString() 
+            valb8 = btn8.text.toString() 
+            valb9 = btn9.text.toString() 
+            if 
+            (b1 == b2 &&b2 == b3 &&b3 != "") 
+            { 
+                Toast.makeText(this, "Winners is:$b1", Toast.LENGTH_SHORT).show() newGame() 
+            } 
+            else if
+            (b4 == b5 &&b5 == b6 &&b6 != "") 
+            { 
+                Toast.makeText
+                (
+                    this, "Winners is:$b4",
+                    Toast.LENGTH_SHORT).show() 
+                    newGame() 
+                } 
+                else if 
+                (b7 == b8 &&b8 == b9 &&b9 != "") 
+                { 
+                    Toast.makeText(this, "Winners is:$b7", 
+                    Toast.LENGTH_SHORT).show() 
+                    newGame() 
+                } 
+                else if 
+                (b1 == b4 &&b4 == b7 &&b7 != "") 
+                { 
+                    newGame() Toast.makeText(this, "Winners is:$b1", 
+                    Toast.LENGTH_SHORT).show() 
+                } 
+                else if 
+                (b2 == b5 &&b5 == b8 &&b8 != "") 
+                { 
+                    Toast.makeText(this, "Winners is:$b2", 
+                    Toast.LENGTH_SHORT).show() 
+                    newGame() 
+                }
+                else if 
+                (b3 == b6 &&b6 == b9 &&b9 != "") 
+                {
+                    Toast.makeText(this, "Winners is:$b9", 
+                    Toast.LENGTH_SHORT).show()
+                } 
+                else if 
+                (b1 == b5 &&b5 == b9 &&b9 != "") 
+                { 
+                    Toast.makeText(this, "Winners is:$b1", 
+                    Toast.LENGTH_SHORT).show() 
+                    newGame() 
+                } 
+                else if 
+                (b3 == b5 &&b5 == b7 &&b7 != "") 
+                { 
+                    Toast.makeText(this, "Winners is:$b3", 
+                    Toast.LENGTH_SHORT).show() 
+                    newGame() 
+                }
+                else if 
+                (count==9)
+                { 
+                    Toast.makeText(this, "Winners is Drawn...", 
+                    Toast.LENGTH_SHORT).show() 
+                    newGame() 
+                } 
+            } 
+        }
+    }
